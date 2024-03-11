@@ -11,7 +11,7 @@ import { Report } from './reports/report.entity';
     TypeOrmModule.forRoot({
       type: 'sqlite',
       database: 'db.sqlite',
-       synchronize: true,
+       synchronize: true, // of we change type in entity typeorm will change it in db.// never use in production, always use migrations
        entities: [User, Report]
     }),
     UsersModule,
