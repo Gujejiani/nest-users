@@ -11,6 +11,7 @@ export class UsersService {
         try {
             console.log('Creating user...');
             const user = this.repo.create({ email, password, name});
+            // if we call save on a plain object hooks will not be called
             return await this.repo.save(user);
         } catch (error) {
             // Handle error appropriately

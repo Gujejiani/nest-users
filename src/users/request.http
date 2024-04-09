@@ -4,7 +4,7 @@ POST http://localhost:3001/auth/signup
 Content-Type: application/json
 
   {
-    "email": "user1@bl.ru",
+    "email": "kakhaaaxx@bl.ru",
     "password": "password",
     "name": "user1"
   }
