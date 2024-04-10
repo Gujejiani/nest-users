@@ -20,18 +20,7 @@ export class UsersService {
         }
     }
 
-    async update(user: User) {
-        try {
-            console.log('Updating user...');
-            return await this.repo.save(user);
-        } catch (error) {
-            // Handle error appropriately
-            console.error('Error updating user:', error);
-            throw error; // Rethrow error or return custom error response
-        }
-
-      
-    }
+   
     
     findOne(id: any) {
         return this.repo.findOneBy({ id  });
@@ -40,4 +29,16 @@ export class UsersService {
     find(email: string) {
         return this.repo.find({ where: { email } });
      }
+
+    async update(id: number, attrs: Partial<User>){
+       const user = await this.findOne(id);
+       if(!user){
+           throw new Error('User not found');
+       }
+       Object.assign(user, attrs);
+         return this.repo.save(user);
+
+     }
+
+   
 }
