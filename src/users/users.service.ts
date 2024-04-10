@@ -29,5 +29,15 @@ export class UsersService {
             console.error('Error updating user:', error);
             throw error; // Rethrow error or return custom error response
         }
+
+      
     }
+    
+    findOne(id: any) {
+        return this.repo.findOneBy({ id  });
+      }
+
+    find(email: string) {
+        return this.repo.find({ where: { email } });
+     }
 }
