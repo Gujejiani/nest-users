@@ -10,7 +10,16 @@ Content-Type: application/json
   }
 
 
-### send request
+### send request for specific user
 
 GET http://localhost:3001/auth/f04ed034-1833-4978-8f72-4ef254b9fdc9
   
+
+
+### retrieve users vie email
+
+GET http://localhost:3001/auth/?email=kakhaa@bl.ru
+
+### delete user by id
+
+DELETE http://localhost:3001/auth/f04ed034-1833-4978-8f72-4ef254b9fdc9
