@@ -12,7 +12,7 @@ Content-Type: application/json
 
 ### send request for specific user
 
-GET http://localhost:3001/auth/f04ed034-1833-4978-8f72-4ef254b9fdc9
+GET http://localhost:3001/auth/b7130441-79cf-4c66-98c6-fa0ddb9fdbcb
   
 
 
@@ -22,4 +22,13 @@ GET http://localhost:3001/auth/?email=kakhaa@bl.ru
 
 ### delete user by id
 
-DELETE http://localhost:3001/auth/f04ed034-1833-4978-8f72-4ef254b9fdc9
+DELETE http://localhost:3001/auth/b7130441-79cf-4c66-98c6-fa0ddb9fdbcb
+
+### update user
+
+PATCH http://localhost:3001/auth/b7130441-79cf-4c66-98c6-fa0ddb9fdbcb
+Content-Type: application/json
+
+  {
+    "email": "Kakha_updated@bk.ru"
+  }
