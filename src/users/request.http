@@ -4,7 +4,13 @@ POST http://localhost:3001/auth/signup
 Content-Type: application/json
 
   {
-    "email": "kakhaaaxx@bl.ru",
-    "password": "password",
+    "email": "kakhaa@bl.ru",
+    "password": "test@",
     "name": "user1"
   }
+
+
+### send request
+
+GET http://localhost:3001/auth/f04ed034-1833-4978-8f72-4ef254b9fdc9
+  
