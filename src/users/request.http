@@ -22,7 +22,7 @@ GET http://localhost:3001/auth/?email=kakhaa@bl.ru
 
 ### delete user by id
 
-DELETE http://localhost:3001/auth/b7130441-79cf-4c66-98c6-fa0ddb9fdbcb
+DELETE http://localhost:3001/auth/xxb7130441-79cf-4c66-98c6-fa0ddb9fdbcb
 
 ### update user
 
