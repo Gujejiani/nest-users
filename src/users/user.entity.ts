@@ -1,6 +1,6 @@
 import { Entity,AfterInsert,AfterRemove, AfterUpdate, Column, PrimaryColumn, BeforeInsert } from 'typeorm';
 import { v4 as uuidv4 } from 'uuid';
-
+import {Exclude} from 'class-transformer'
 @Entity()
 export class User {
   @PrimaryColumn()
@@ -13,6 +13,7 @@ export class User {
   email: string;
 
   @Column()
+  // @Exclude()
   password: string;
 
   @BeforeInsert()
