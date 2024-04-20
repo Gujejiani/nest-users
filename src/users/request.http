@@ -12,7 +12,7 @@ Content-Type: application/json
 
 ### send request for specific user
 
-GET http://localhost:3001/auth/b7130441-79cf-4c66-98c6-fa0ddb9fdbcb
+GET http://localhost:3001/auth/2011b8ec-ca2c-4af8-8c29-b799bc8d1e53
   
 
 
