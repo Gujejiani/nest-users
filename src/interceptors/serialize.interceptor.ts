@@ -20,7 +20,7 @@ export class SerializeInterceptor implements NestInterceptor {
                 // return plainToClass(this.dto, data, {
                 //     excludeExtraneousValues: true
                 // });
-                const plainTo = plainToInstance(UserDto, data, {
+                const plainTo = plainToInstance(this.dto, data, {
                     excludeExtraneousValues: true
                 
                 });
