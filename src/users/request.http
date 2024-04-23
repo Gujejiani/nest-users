@@ -4,12 +4,12 @@ POST http://localhost:3001/auth/signup
 Content-Type: application/json
 
   {
-    "email": "kakhaaaaaa@bl.ru",
+    "email": "test@text.com",
     "password": "test@",
     "name": "user1"
-  };
+  }
 
-###
+### sign in as an existing user
 
 
 POST http://localhost:3001/auth/signin
