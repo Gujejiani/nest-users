@@ -22,6 +22,15 @@ Content-Type: application/json
   }
 
 
+### who am i
+
+GET http://localhost:3001/auth/whoami
+
+
+### sing out 
+POST http://localhost:3001/auth/signout
+
+
 ### send request for specific user
 
 GET http://localhost:3001/auth/2011b8ec-ca2c-4af8-8c29-b799bc8d1e53

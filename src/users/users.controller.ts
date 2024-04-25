@@ -5,10 +5,13 @@ import { UsersService } from './users.service';
 import { UpdateUserDto } from './dtos/update-user.dto';
 import { SerializeInterceptor, Serialize } from 'src/interceptors/serialize.interceptor';
 import { UserDto } from './dtos/user.dto';
+import { CurrentUser } from './decorators/current-user.decorator';
+import { CurrentUserInterceptor } from './interceptors/current-user.interceptor';
 
 
 @Serialize(UserDto)
 @Controller('auth')
+@UseInterceptors(CurrentUserInterceptor)
 export class UsersController {
     constructor(private userService: UsersService, private authService: AuthService){
 
@@ -22,6 +25,21 @@ export class UsersController {
 
     return user
     }
+
+    @Get('/whoami')
+   async whoAmI(@CurrentUser() user: string){
+    console.log('user ', user)
+        return user
+    }
+
+
+    @Post('/signout')
+    signOut(@Session() session: any){
+        session.userId = null;
+        return 'You are signed out'
+    }
+
+
     @Post('/signin')
    async signIn(@Body() body: CreateUserDto, @Session() session: any){
        

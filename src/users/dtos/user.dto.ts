@@ -1,9 +1,9 @@
 import { Expose } from "class-transformer";
 
 export class UserDto {
-    @Expose()// do share this property
+    @Expose()// by  serialize interceptor
     id: number;
 
-    @Expose()
+    @Expose() // by  serialize interceptor
     email: string
 }
