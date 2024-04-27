@@ -1,12 +1,14 @@
 import { AuthService } from './auth.service';
 import { CreateUserDto } from './dtos/create-user.dto';
-import { Controller, Post, Body, Get, Patch, Param, Query, Delete, UseInterceptors, ClassSerializerInterceptor, Session} from '@nestjs/common';
+import { Controller, Post, Body, Get, Patch, Param, Query, Delete, UseInterceptors, ClassSerializerInterceptor, Session, UseGuards} from '@nestjs/common';
 import { UsersService } from './users.service';
 import { UpdateUserDto } from './dtos/update-user.dto';
 import { SerializeInterceptor, Serialize } from 'src/interceptors/serialize.interceptor';
 import { UserDto } from './dtos/user.dto';
 import { CurrentUser } from './decorators/current-user.decorator';
 import { CurrentUserInterceptor } from './interceptors/current-user.interceptor';
+import { AuthGuard } from 'src/guards/auth.guard';
+
 
 
 @Serialize(UserDto)
@@ -27,6 +29,7 @@ export class UsersController {
     }
 
     @Get('/whoami')
+    @UseGuards(AuthGuard)
    async whoAmI(@CurrentUser() user: string){
     console.log('user ', user)
         return user
